@@ -11,3 +11,5 @@ class Solution(object):
             A.append(current.val)
             current = current.next
         return A == A[::-1] 
+
+'''Adding all elements of linked list to an array and then checking if the array is equivalent to its reverse'''
