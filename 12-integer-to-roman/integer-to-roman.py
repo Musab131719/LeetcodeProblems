@@ -1,7 +1,8 @@
 class Solution(object):
     def intToRoman(self, num):
-
-        n = len(str(num))   # Determines no. of digits 
+        
+        # Setup
+        n = len(str(num))   
         count = [int(x) for x in str(num)]
         symbols = {1:"I", 5:"V", 10:"X", 50:"L", 100:"C", 500:"D", 1000:"M"}
         dict_9 = {"C":"CM", "X":"XC", "I":"IX"}
@@ -9,9 +10,11 @@ class Solution(object):
         dict_5 = {"C":"D", "X":"L", "I":"V"}
         result = [""] * 4
 
+        # Making length of count 4 by padding with zeroes if needed
         while len(count) < 4:
             count.insert(0,0)
 
+        # Concatenating symbols based off of count 
         for i in range(4):
             if count[i] == 0:
                 continue
@@ -19,6 +22,7 @@ class Solution(object):
                 result[i] += symbols[10**(4-i-1)]
                 count[i] -= 1
 
+        # Reducing concatenated symbols using conditions
         for i in range(1,4):
             if len(result[i]) == 9:
                 result[i] = dict_9[symbols[10**(4-i-1)]]
