@@ -2,9 +2,7 @@ import math
 class Solution(object):
     def numberToWords(self, num):
         if num == 0:
-            return "Zero" 
-        # if num == 10:
-        #     return "Ten"        
+            return "Zero"    
 
         units = {"0":"", "1": "One", "2": "Two", "3": "Three", "4": "Four", "5": "Five", "6": "Six", "7": "Seven", "8": "Eight", "9": "Nine"}
         tens = {"0":"", "1": "Ten","2": "Twenty", "3": "Thirty", "4": "Forty", "5": "Fifty", "6": "Sixty", "7": "Seventy", "8": "Eighty", "9": "Ninety"}
@@ -36,27 +34,18 @@ class Solution(object):
                     reverse[i-1] = ""
                 else:
                     reverse[i] = tens[digit]
-        print(reverse)
         
         flip = reverse[::-1]
         first_group = n % 3 or 3
-        print(first_group)
-        print(flip)
         groups = []
         groups.append(" ".join([x for x in flip[:first_group] if x != ""]).strip())
-        #groups.append(" ".join(flip[:first_group]).strip())
-        
-        print(groups)
         
         for i in range(first_group, n, 3):
             groups.append(" ".join([x for x in flip[i:i+3] if x != ""]).strip())
-            #groups.append(" ".join(flip[i:i+3]).strip())
-        print(groups)
 
         for i in range(len(groups)): 
             if groups[i] is not "":   
                 groups[i] = groups[i] + " " + suffix[len(groups) - i]
-        print(groups)
 
         for group in groups:
             if group is not "":
