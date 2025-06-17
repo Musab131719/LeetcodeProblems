@@ -1,4 +1,3 @@
-import math
 class Solution(object):
     def numberToWords(self, num):
         if num == 0:
