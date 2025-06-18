@@ -11,3 +11,5 @@ class Solution:
             else:
                 R -= 1
         return result
+
+'''Critical to understand that we can just move the minimum of the pointers along since it is limiting the result'''
