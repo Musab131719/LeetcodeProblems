@@ -5,7 +5,7 @@ class Solution:
         
         for i in s:
             if i in dict_char:
-                if stack and dict_char[i] == stack[-1]:
+                if stack and dict_char[i] == stack[-1]: # If stack exists and the character is at the stop of the stack and a key
                     stack.pop()
                 else:
                     return False
