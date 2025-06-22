@@ -30,13 +30,9 @@ class Solution:
             elif M * M < c:
                 L = M + 1
         root_c = R if root_c == 0 else root_c 
-        print(root_c)
-        
         
         arr = list(range(1, root_c + 1))
-        print(arr)
         for number in arr:
-            print(c - number*number, isPerfectSquare(c - number*number))
             if isPerfectSquare(c - number*number) == True:
                 return True
             else: continue
